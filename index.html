@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>임승현 ♥ 유예빈의 결혼합니다.</title>
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:title" content="임승현 & 유예빈 결혼합니다">
+    <meta property="og:description" content="2026년 9월 19일 오후 2시">
+    <meta property="og:image" content="메인사진URL">
+</head>
+<body>
+    <canvas id="sakura"></canvas>
+
+    
+    <div id="intro-layer">
+        <div class="intro-content">
+            <p class="intro-names">임승현 <span class="heart">♥</span> 유예빈</p>
+            <p class="intro-text">저희의 결혼식에 초대합니다.</p>
+        </div>
+    </div>
+
+    <div id="main-wrapper">
+        </div>
+
+    
+    <section id="main-visual">
+    <div class="main-content">
+        <h1 class="main-title">Wedding Invitation</h1>
+        <p class="main-date">2026. 9. 19. SAT PM 14:00</p>
+        <p class="main-location">서울 강동구 성내동 449-7 오륜교회</p>
+    </div>
+    </section>
+
+    <section id="greeting">
+        <h2>초대합니다</h2>
+        <p>사랑과 믿음으로 하나 되는 저희 두 사람의 새로운 시작, 따뜻한 축복 속에서 함께 빛내주시길 바랍니다</p>
+    </section>
+
+    <!-- 이름 코드 -->
+
+    <section id="names">
+    <div class="name-row">
+        <span class="parents">손덕환 · 이상난</span>
+        <span class="relation">차남</span>
+        <span class="main-name">임승현</span>
+    </div>
+    <div class="name-row">
+        <span class="parents">류재권 · 박봉연</span>
+        <span class="relation">장녀</span>
+        <span class="main-name">류예빈</span>
+    </div>
+    </section>
+
+    <!-- 달력 코드 -->
+
+    <section id="calendar-section">
+    <p class="calendar-title">Calendar</p>
+    <h3 class="calendar-month">9월</h3>
+    
+    <table class="calendar">
+        <thead>
+            <tr>
+                <th class="sun">일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="sun"></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+            </tr>
+            <tr>
+                <td class="sun">6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+            </tr>
+            <tr>
+                <td class="sun">13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td class="wedding-day">19</td>
+            </tr>
+            <tr>
+                <td class="sun">20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+            </tr>
+            <tr>
+                <td class="sun">27</td><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td>
+            </tr>
+        </tbody>
+    </table>
+    </section>
+
+     <!-- 갤러리 코드 -->
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="pto/photo1.jpg" alt="사진1"></div>
+            <div class="swiper-slide"><img src="pto/photo2.jpg" alt="사진2"></div>
+            <div class="swiper-slide"><img src="pto/photo3.jpg" alt="사진3"></div>
+            <div class="swiper-slide"><img src="pto/photo4.jpg" alt="사진4"></div>
+            <div class="swiper-slide"><img src="pto/photo5.jpg" alt="사진5"></div>
+            <div class="swiper-slide"><img src="pto/photo6.jpg" alt="사진6"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    </section>
+
+    <script>
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,               // 무한 반복
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,      // 점 클릭 가능
+        },
+        autoplay: {
+            delay: 2500,          // 2.5초마다 자동 넘김
+            disableOnInteraction: false,
+        },
+    });
+    </script>
+        </section>
+
+    <!-- 오시는 길 코드 -->
+    <section id="map-section">
+    <h2 class="section-title">오시는 길</h2>
+    <p class="location-name">오륜교회</p>
+    <p class="location-address">서울 강동구 성내동 449-7</p>
+    
+    <div id="map" style="width:100%;height:350px;margin-top:20px;border-radius:10px;"></div>
+
+    <div class="map-buttons">
+        <a href="https://map.kakao.com/link/to/오륜교회,37.5240,127.1332" target="_blank" class="btn-kakao">카카오맵 길찾기</a>
+    </div>
+    </section>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은_자바스크립트_키"></script>
+
+    <!-- 교통 코드 -->
+
+    <section id="transportation">
+    <div class="info-item">
+        <div class="info-title">
+            <span class="icon">🚗</span> 자차
+        </div>
+        <div class="info-content">
+            <p>네비게이션에 <strong>'오륜교회'</strong> 입력</p>
+            <p class="parking-tip">* 교회 내 주차 공간이 협소할 경우, 인근 <strong>한국체육대학교</strong> 또는 <strong>올림픽공원 주차장</strong> 이용이 편리합니다.</p>
+        </div>
+    </div>
+
+    <div class="info-item">
+        <div class="info-title">
+            <span class="icon">ℹ️</span> 대중교통 이용 시
+        </div>
+        <div class="info-content">
+            <ol>
+                <li><strong>5호선 둔춘동역 3번 출구</strong> 나오셔서 둔춘사거리까지 걸어오신 후 올림픽대교 방향으로 우회전 </li>
+                <li><strong>버스(3214, 3316, 3412, 3413)을</strong> 타시고 둔춘종합상가에서 하차, 둔춘사거리에서 올림픽대교 방향으로 우회전</li>
+            </ol>
+        </div>
+    </div>
+    </section>
+
+    <!-- 축의금 코드 -->
+
+    <section id="account">
+        <h2>마음 전하실 곳</h2>
+    </section>
+
+    <details class="account-group">
+    <summary>신랑측 계좌번호 <span class="arrow"></span></summary>
+    <div class="account-list">
+        
+        <div class="account-item">
+            <div class="info">
+                <p class="name">부친</p>
+                <p>국민은행 110-123-456789</p>
+            </div>
+            <div class="buttons">
+                <button class="btn-copy" onclick="copyText('110123456789')">복사</button>
+                <a href="카카오페이링크1" class="btn-kakao">💳 CARD</a>
+            </div>
+        </div>
+
+        <div class="account-item">
+            <div class="info">
+                <p class="name">신랑 임승현</p>
+                <p>농협은행 302-987-654321</p>
+            </div>
+            <div class="buttons">
+                <button class="btn-copy" onclick="copyText('302987654321')">복사</button>
+                <a href="카카오페이링크2" class="btn-kakao">💳 CARD</a>
+            </div>
+        </div>
+
+    </div>
+</details>
+
+    <details class="account-group">
+    <summary>신부측 계좌번호 <span class="arrow"></span></summary>
+    <div class="account-list">
+        
+        <div class="account-item">
+            <div class="info">
+                <p class="name">류재권</p>
+                <p>우리은행 348-080-83195</p>
+            </div>
+            <div class="buttons">
+                <button class="btn-copy" onclick="copyText('110123456789')">복사</button>
+                <a href="카카오페이링크1" class="btn-kakao">💳 CARD</a>
+            </div>
+        </div>
+
+        <div class="account-item">
+            <div class="info">
+                <p class="name">유예빈</p>
+                <p>농협은행 302-987-654321</p>
+            </div>
+            <div class="buttons">
+                <button class="btn-copy" onclick="copyText('302987654321')">복사</button>
+                <a href="카카오페이링크2" class="btn-kakao">💳 CARD</a>
+            </div>
+        </div>
+
+    </div>
+    </details>
+    </section> 
+
+    <!-- 음악 코드 -->
+
+    <audio id="bgm" loop>
+    <source src="wedding-song.mp3" type="audio/mp3">
+    </audio>
+
+    <div id="music-container" onclick="toggleMusic()">
+    <div class="music-icon">♪</div>
+    <span class="music-text">BGM ON</span>
+    </div>
+
+    <!-- 방명록 코드 -->
+
+    <section id="guestbook">
+    <h2 class="section-title">방명록</h2>
+    
+    <div id="guestbook-list"></div>
+
+    <div class="guestbook-controls">
+        <button class="btn-all">≡ 전체보기</button>
+        <button class="btn-write" onclick="toggleInput()">🖋 작성하기</button>
+    </div>
+
+    <div id="guestbook-input" style="display:none;">
+        <input type="text" id="guest-name" placeholder="성함">
+        <textarea id="guest-message" placeholder="축하 메시지를 남겨주세요"></textarea>
+        <button onclick="saveMessage()">등록하기</button>
+    </div>
+</section>
+
+<script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-database-compat.js"></script>
+    <!-- 자바스크립트 연동코드 -->
+
+<script src="script.js"></script>
+</body>
+</html>
