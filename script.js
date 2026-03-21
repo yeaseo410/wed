@@ -98,6 +98,25 @@ try {
     console.log("지도 로드 대기 중...");
 }
 
+var container = document.getElementById('map'); // 지도를 담을 영역의 DOM 레퍼런스
+var options = { 
+    center: new kakao.maps.LatLng(37.5240, 127.1332), // 오륜교회 좌표
+    level: 3 // 확대 레벨
+};
+
+var map = new kakao.maps.Map(container, options); // 지도 생성
+
+// 마커가 표시될 위치입니다 
+var markerPosition  = new kakao.maps.LatLng(37.5240, 127.1332); 
+
+// 마커를 생성합니다
+var marker = new kakao.maps.Marker({
+    position: markerPosition
+});
+
+// 마커가 지도 위에 표시되도록 설정합니다
+marker.setMap(map);
+
 // [1] 유틸리티 함수 (복사 기능만 유지)
 function copyText(text) {
     navigator.clipboard.writeText(text).then(() => alert("계좌번호가 복사되었습니다."));
