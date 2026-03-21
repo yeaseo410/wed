@@ -162,25 +162,29 @@
     <div id="map" style="width:100%;height:350px;margin-top:20px;border-radius:10px;"></div>
 
     <div class="map-buttons">
-        <a href="https://map.kakao.com/link/to/오륜교회,37.5240, 127.1332" target="_blank" class="btn-kakao">카카오맵 길찾기</a>
+        <a href="https://map.kakao.com/link/to/오륜교회,37.5240,127.1332" target="_blank" class="btn-kakao">카카오맵 길찾기</a>
     </div>
-    </section>
+</section>
 
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4189f2b4f758ae4fc6af6ad06c09c2d5"></script>
-    
-    <script>
-    var container = document.getElementById('map'); 
-    var options = { 
-        center: new kakao.maps.LatLng(37.5240, 127.1332), // 오륜교회 좌표
-        level: 3 
-    };
-    var map = new kakao.maps.Map(container, options); 
+<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=4189f2b4f758ae4fc6af6ad06c09c2d5"></script>
 
-    // 마커 표시
-    var markerPosition  = new kakao.maps.LatLng(37.5240, 127.1332); 
-    var marker = new kakao.maps.Marker({ position: markerPosition });
-    marker.setMap(map);
-    </script>
+<div style="font: 12px AppleSDGothicNeo-Regular, dotum, sans-serif; letter-spacing: -1px; width: 100%; color: rgb(51, 51, 51); position: relative;">
+    <div style="height: 240px;">
+        <a href="https://map.kakao.com/?itemId=17010406&q=%EC%98%A4%EB%A5%9C%EA%B5%90%ED%9A%8C" target="_blank">
+            <img class="map" src="http://t1.daumcdn.net/roughmap/imgmap/90e333b8dcc6909c2c61d9d090b95a21531c888a97d9e795df8f595b79d2aa7c" width="100%" height="238" style="border: 1px solid rgb(204, 204, 204); object-fit: cover; border-radius: 10px;">
+        </a>
+    </div>
+    <div style="overflow: hidden; padding: 7px 11px; border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 0px 0px 10px 10px; background-color: rgb(249, 249, 249); margin-top: -1px;">
+        <a href="https://map.kakao.com" target="_blank" style="float: left;">
+            <img src="https://t1.daumcdn.net/localimg/localimages/07/2018/pc/common/logo_kakaomap.png" width="72" height="16" alt="카카오맵" style="display:block;">
+        </a>
+        <div style="float: right; font-size: 11px;">
+            <a target="_blank" href="https://map.kakao.com/?confirmid=17010406&q=%EC%98%A4%EB%A5%9C%EA%B5%90%ED%9A%8C&rv=on" style="color:#000; text-decoration: none;">로드뷰</a>
+            <span style="margin: 0 8px; border-left: 1px solid #d0d0d0;"></span>
+            <a target="_blank" href="https://map.kakao.com/?eName=%EC%98%A4%EB%A5%9C%EA%B5%90%ED%9A%8C" style="color:#000; text-decoration: none;">길찾기</a>
+        </div>
+    </div>
+</div>
 
     <section id="transportation">
     <div class="info-item">
