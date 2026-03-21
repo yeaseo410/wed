@@ -98,24 +98,57 @@ try {
     console.log("지도 로드 대기 중...");
 }
 
-// 5. 유틸리티 함수 (복사, 음악, 방명록)
+// [1] 유틸리티 함수 (복사 기능만 유지)
 function copyText(text) {
     navigator.clipboard.writeText(text).then(() => alert("계좌번호가 복사되었습니다."));
 }
 
-function toggleMusic() {
+// [2] 페이지 로드 시 인트로 제거 및 자동 재생 로직
+document.addEventListener("DOMContentLoaded", function() {
+    const intro = document.getElementById('intro-layer');
     const bgm = document.getElementById('bgm');
     const musicContainer = document.getElementById('music-container');
-    if (bgm.paused) {
-        bgm.play();
-        musicContainer.classList.add('playing');
-        document.querySelector('.music-text').innerText = "BGM OFF";
-    } else {
-        bgm.pause();
-        musicContainer.classList.remove('playing');
-        document.querySelector('.music-text').innerText = "BGM ON";
+    const musicText = document.querySelector('.music-text');
+
+    // 재생 상태를 업데이트하는 내부 공통 함수
+    function startMusic() {
+        if (bgm && bgm.paused) {
+            bgm.play()
+                .then(() => {
+                    if (musicContainer) musicContainer.classList.add('playing');
+                    if (musicText) musicText.innerText = "BGM OFF";
+                })
+                .catch(e => console.log("자동 재생 방지 정책으로 인해 클릭이 필요합니다."));
+        }
     }
-}
+
+    // 1. 사용자가 인트로 화면 아무 곳이나 클릭하면 음악 재생 시작 및 즉시 인트로 제거 준비
+    if (intro) {
+        intro.addEventListener('click', function() {
+            startMusic(); // 음악 재생 시도
+            
+            // 클릭 즉시 페이드 아웃 시작 (선택 사항: 클릭 시 바로 사라지게 하려면 아래 코드 활성화)
+            /*
+            intro.classList.add('fade-out');
+            setTimeout(() => { intro.style.display = 'none'; }, 1500);
+            */
+        });
+    }
+
+    // 2. 기존 로직: 2.5초 후 자동으로 인트로 페이드 아웃 시작
+    setTimeout(function() {
+        if (intro) {
+            intro.classList.add('fade-out');
+            setTimeout(() => {
+                intro.style.display = 'none';
+                
+                // 인트로가 완전히 사라지는 시점에 한 번 더 재생 시도
+                // (사용자가 이전에 인트로를 클릭했다면 이미 재생 중일 것입니다)
+                startMusic();
+            }, 1500);
+        }
+    }, 2500);
+});
 
 // 6. Firebase (YOUR_부분을 실제 값으로 채워주세요!)
 const firebaseConfig = {
