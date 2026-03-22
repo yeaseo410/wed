@@ -169,12 +169,12 @@ document.addEventListener("DOMContentLoaded", function() {
 // 1. Firebase 설정 (복사한 본인의 키값으로 교체하세요!)
 const firebaseConfig = {
     apiKey: "AIzaSyDIVYbKH19kXXOrJXEzmHAAxDOiIor5DYM",
-    authDomain: "wedding-guestbook-xxxxx.firebaseapp.com",
-    databaseURL: "https://wedding-guestbook-xxxxx-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "wedding-guestbook-xxxxx",
-    storageBucket: "wedding-guestbook-xxxxx.appspot.com",
-    messagingSenderId: "xxxxxxxxxxxx",
-    appId: "1:xxxxxxxxxxxx:web:xxxxxxxxxxxx"
+    authDomain: "wedding-guestbook-bda35.firebaseapp.com",
+    databaseURL: "https://wedding-guestbook-bda35-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "wedding-guestbook-bda35",
+    storageBucket: "wedding-guestbook-bda35.firebasestorage.app",
+    messagingSenderId: "410447321886",
+    appId: "1::410447321886:web:d519b3f52d1e85b4e9c70f"
 };
 
 // Firebase 초기화
