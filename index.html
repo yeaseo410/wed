@@ -310,7 +310,7 @@
 
     <!-- 방명록 코드 -->
 
-    <section id="guestbook">
+<section id="guestbook">
     <h2 class="section-title">방명록</h2>
     
     <div id="guestbook-list"></div>
@@ -322,14 +322,13 @@
     <div id="guestbook-input" style="display:none;">
         <input type="text" id="guest-name" placeholder="성함">
         <textarea id="guest-message" placeholder="신랑 신부에게 축하의 마음을 전해주세요."></textarea>
-        <button class="btn-submit" onclick="saveMessage()">등록하기</button>
+        <button id="submit-btn" class="btn-submit">등록하기</button>
     </div>
 </section>
 
 <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
-    <!-- 자바스크립트 연동코드 -->
-
 <script src="script.js"></script>
+
 </body>
 </html>

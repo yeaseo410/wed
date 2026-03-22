@@ -227,6 +227,17 @@ function saveMessage() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    const submitBtn = document.getElementById('submit-btn');
+    if (submitBtn) {
+        // 모바일 대응을 위해 클릭 이벤트를 명시적으로 연결
+        submitBtn.addEventListener('click', function(e) {
+            e.preventDefault(); // 폼 전송 방지 (안정성 확보)
+            saveMessage();
+        });
+    }
+});
+
 // 입력창 토글 함수
 function toggleInput() {
     const inputDiv = document.getElementById('guestbook-input');
