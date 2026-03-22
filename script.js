@@ -166,25 +166,71 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // 6. Firebase (YOUR_부분을 실제 값으로 채워주세요!)
+// 1. Firebase 설정 (복사한 본인의 키값으로 교체하세요!)
 const firebaseConfig = {
-    apiKey: "AIza...",
-    databaseURL: "https://...",
-    projectId: "...",
+    apiKey: "AIzaSyDIVYbKH19kXXOrJXEzmHAAxDOiIor5DYM",
+    authDomain: "wedding-guestbook-xxxxx.firebaseapp.com",
+    databaseURL: "https://wedding-guestbook-xxxxx-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "wedding-guestbook-xxxxx",
+    storageBucket: "wedding-guestbook-xxxxx.appspot.com",
+    messagingSenderId: "xxxxxxxxxxxx",
+    appId: "1:xxxxxxxxxxxx:web:xxxxxxxxxxxx"
 };
-if (typeof firebase !== 'undefined') {
-    firebase.initializeApp(firebaseConfig);
-    const database = firebase.database();
-    
-    database.ref('messages').on('value', (snapshot) => {
-        const data = snapshot.val();
-        const listElement = document.getElementById('guestbook-list');
-        if(listElement) {
-            listElement.innerHTML = '';
-            for (let id in data) {
-                const msg = data[id];
-                const card = `<div class="guestbook-card">...</div>`; // 생략
-                listElement.insertAdjacentHTML('afterbegin', card);
-            }
+
+// Firebase 초기화
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
+// 2. 메시지 실시간 불러오기
+database.ref('messages').on('value', (snapshot) => {
+    const data = snapshot.val();
+    const listElement = document.getElementById('guestbook-list');
+    listElement.innerHTML = ''; 
+
+    if (data) {
+        for (let id in data) {
+            const msg = data[id];
+            const card = `
+                <div class="guestbook-card">
+                    <div class="name">From. ${msg.name}</div>
+                    <div class="content">${msg.message}</div>
+                </div>`;
+            listElement.insertAdjacentHTML('afterbegin', card); // 최신글이 위로 오게 함
         }
-    });
+    }
+});
+
+// 3. 메시지 저장 함수 (주차 안내 팝업 제외)
+function saveMessage() {
+    const nameInput = document.getElementById('guest-name');
+    const messageInput = document.getElementById('guest-message');
+    const name = nameInput.value;
+    const message = messageInput.value;
+
+    if (name.trim() && message.trim()) {
+        database.ref('messages').push({
+            name: name,
+            message: message,
+            date: new Date().toLocaleString()
+        }).then(() => {
+            // 성공 시 알림 및 입력창 초기화
+            alert("축하 메시지가 소중하게 전달되었습니다.");
+            nameInput.value = '';
+            messageInput.value = '';
+            toggleInput(); // 입력창 닫기
+        }).catch((error) => {
+            console.error("저장 중 오류 발생:", error);
+            alert("메시지 저장에 실패했습니다. 잠시 후 다시 시도해 주세요.");
+        });
+    } else {
+        alert("성함과 메시지를 모두 입력해 주세요.");
+    }
+}
+
+// 입력창 토글 함수
+function toggleInput() {
+    const inputDiv = document.getElementById('guestbook-input');
+    if (inputDiv) {
+        inputDiv.style.display = inputDiv.style.display === 'none' ? 'block' : 'none';
+    }
 }

@@ -316,19 +316,18 @@
     <div id="guestbook-list"></div>
 
     <div class="guestbook-controls">
-        <button class="btn-all">≡ 전체보기</button>
-        <button class="btn-write" onclick="toggleInput()">🖋 작성하기</button>
+        <button class="btn-write" onclick="toggleInput()">🖋 축하 메시지 남기기</button>
     </div>
 
     <div id="guestbook-input" style="display:none;">
         <input type="text" id="guest-name" placeholder="성함">
-        <textarea id="guest-message" placeholder="축하 메시지를 남겨주세요"></textarea>
-        <button onclick="saveMessage()">등록하기</button>
+        <textarea id="guest-message" placeholder="신랑 신부에게 축하의 마음을 전해주세요."></textarea>
+        <button class="btn-submit" onclick="saveMessage()">등록하기</button>
     </div>
 </section>
 
-<script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
     <!-- 자바스크립트 연동코드 -->
 
 <script src="script.js"></script>
