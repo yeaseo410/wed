@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function() {
 const firebaseConfig = {
     apiKey: "AIzaSyDIVYbKH19kXXOrJXEzmHAAxDOiIor5DYM",
     authDomain: "wedding-guestbook-bda35.firebaseapp.com",
-    databaseURL: "https://wedding-guestbook-bda35-default-rtdb.asia-southeast1.firebasedatabase.app",
+    databaseURL: "https://wedding-guestbook-bda35-default-rtdb.asia-southeast1.firebasedatabase.app/",
     projectId: "wedding-guestbook-bda35",
     storageBucket: "wedding-guestbook-bda35.firebasestorage.app",
     messagingSenderId: "410447321886",
