@@ -469,3 +469,21 @@ summary {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.2); color: #e5b3a1; } /* 색상도 살짝 변경 */
 }
+
+.btn-kakao-share {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #FEE500;
+    color: #191919;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+.btn-kakao-share:active { transform: scale(0.98); }
