@@ -333,12 +333,28 @@
 
 <section id="share-section" style="text-align: center; padding: 40px 20px;">
     <p style="font-family: 'Gowun Batang', serif; color: #8d6e63; margin-bottom: 15px;">카카오톡으로 소식을 전해보세요.</p>
-    <button onclick="shareKakao()" class="btn-kakao-share">
-        <img src="https://t1.kakaocdn.net/kakaocorp/kakaocorp/admin/service/a85d0505017500001.png" width="20" alt="K"> 카카오톡 공유하기
+    <button onclick="shareKakao()" class="btn-kakao-share" style="cursor: pointer;">
+        <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png" width="20" alt="K" style="vertical-align: middle; margin-right: 5px;"> 
+        <span style="vertical-align: middle;">카카오톡 공유하기</span>
     </button>
 </section>
 
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js"></script>
+
+<script>
+  // 페이지 로드 시 카카오 SDK가 준비되었는지 확인하고 초기화합니다.
+  window.onload = function() {
+    if (!Kakao.isInitialized()) {
+      Kakao.init('4189f2b4f758ae4fc6af6ad06c09c2d5'); // 본인의 자바스크립트 키
+    }
+  };
+
+  function shareKakao() {
+    Kakao.Share.sendCustom({
+      templateId: 131097, // 확정된 템플릿 ID
+    });
+  }
+</script>
 
 <script src="script.js"></script>
 
