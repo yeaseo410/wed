@@ -245,14 +245,3 @@ function toggleInput() {
         inputDiv.style.display = inputDiv.style.display === 'none' ? 'block' : 'none';
     }
 }
-
-// 카카오 SDK 초기화 (이미 되어 있다면 중복 선언 주의)
-if (!Kakao.isInitialized()) {
-    Kakao.init('4189f2b4f758ae4fc6af6ad06c09c2d5'); 
-}
-
-function shareKakao() {
-    Kakao.Share.sendCustom({
-        templateId: 131097, // 확정된 템플릿 ID
-    });
-}
