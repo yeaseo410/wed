@@ -228,3 +228,19 @@ function toggleInput() {
         inputDiv.style.display = (inputDiv.style.display === 'none') ? 'block' : 'none';
     }
 }
+// JS 파일 맨 아래에 추가
+function toggleMusic() {
+    const bgm = document.getElementById('bgm');
+    const musicText = document.querySelector('.music-text');
+    const musicContainer = document.getElementById('music-container');
+
+    if (bgm.paused) {
+        bgm.play();
+        musicText.innerText = "BGM OFF";
+        musicContainer.classList.add('playing');
+    } else {
+        bgm.pause();
+        musicText.innerText = "BGM ON";
+        musicContainer.classList.remove('playing');
+    }
+}
